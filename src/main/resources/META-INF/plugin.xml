@@ -1,0 +1,38 @@
+<idea-plugin>
+    <!--插件id-->
+    <id>com.xiaokai.test.demo</id>
+    <!--插件名称-->
+    <name>Demo</name>
+    <!--开发者信息-->
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <!--插件说明-->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <!--扩展点-->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!--注册全局的配置服务-->
+        <applicationService serviceInterface="com.xiaokai.test.DemoSettings"
+                            serviceImplementation="com.xiaokai.test.DemoSettings"/>
+        <!--注册全局的配置管理界面-->
+        <applicationConfigurable instance="com.xiaokai.test.DemoConfigurable"/>
+    </extensions>
+
+    <!--插件动作-->
+    <actions>
+        <!-- Add your actions here -->
+        <action id="demo.hello.world" class="com.xiaokai.test.HelloWorldAction" text="HelloWorld"
+                description="Say Hello World">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
